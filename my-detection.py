@@ -12,9 +12,10 @@ while True:
     display.Render(img)
     display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS())) """
 
-from jetson_inference import detectNet
+import jetson.inference
+from jetson.inference import detectNet
 import jetson.utils
-from jetson_utils import videoSource, videoOutput
+from jetson.utils import videoSource, videoOutput
 
 net = detectNet("ssd-mobilenet-v2", threshold=0.5)
 camera = videoSource('/dev/video0')      # '/dev/video0' for V4L2

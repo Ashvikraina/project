@@ -1,7 +1,7 @@
 # Detectnet
 
 You point your camera around your room and it will detect most of what it can see and tell you what it detected and when.
-![Output of my code]([Imgur](https://i.imgur.com/GUKBjRv.png))
+Output: [Imgur](https://i.imgur.com/GUKBjRv.png)
 
 ## The Algorithm
 

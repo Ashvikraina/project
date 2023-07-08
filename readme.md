@@ -7,11 +7,11 @@ Output: [Imgur](https://i.imgur.com/GUKBjRv.png)
 
 ([Imgur](https://i.imgur.com/VtioCM3.png))
 
-import jetson.inference
-from jetson.inference import detectNet
-import jetson.utils
-from jetson.utils import videoSource, videoOutput
-import time
+    import jetson.inference
+    from jetson.inference import detectNet
+    import jetson.utils
+    from jetson.utils import videoSource, videoOutput
+    import time
 
 The code above imports everything necessary for the code to work
 

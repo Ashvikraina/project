@@ -15,38 +15,38 @@ Output: [Imgur](https://i.imgur.com/GUKBjRv.png)
 
 The code above imports everything necessary for the code to work
 
-net = detectNet("ssd-mobilenet-v2", threshold=0.5)
-camera = videoSource('/dev/video0')
-display = jetson.utils.videoOutput("detecttest1.mp4")
+    net = detectNet("ssd-mobilenet-v2", threshold=0.5)
+    camera = videoSource('/dev/video0')
+    display = jetson.utils.videoOutput("detecttest1.mp4")
 
 Tells what camera source to use and the file name to stroe the video in. You can also try doing it with your live camera but it didn't work for me.
 
-while True:
-    img = camera.Capture()
+    while True:
+        img = camera.Capture()
 
-    if img is None: 
-        continue
+        if img is None: 
+            continue
 
 This code captures frames of from the camera.
 
-current_time=time.strftime("%Y-%m-%d %H:%M:%S")
+    current_time=time.strftime("%Y-%m-%d %H:%M:%S")
 
 This is how I added the time feature to the code.
 
-detections = net.Detect(img)
+    detections = net.Detect(img)
 
 This uses detectnet to detect the frames from the camera.
 
- for detection in detections:
-      confidence=detection.Confidence
-      class_id=detection.ClassID
-      class_name=net.GetClassDesc(class_id)
-      print(f"At {current_time} a {class_name} was detected with {confidence:.2f} confidence.")
+     for detection in detections:
+          confidence=detection.Confidence
+          class_id=detection.ClassID
+          class_name=net.GetClassDesc(class_id)
+          print(f"At {current_time} a {class_name} was detected with {confidence:.2f} confidence.")
 
 This is where we define the variables to print when something is detected.
 
-display.Render(img)
-display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
+    display.Render(img)
+    display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
 
 This renders the detected image and sets the status of the display.
 

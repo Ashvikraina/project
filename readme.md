@@ -61,4 +61,4 @@ This renders the detected image and sets the status of the display.
 7. If you did the file output instead of live video, once you are done running the code press control c in your terminal to end the code.
 8. Now you can open your file that has been created and see how the detectnet works!
 
-[View a video explanation here](video link)
+[Video]((https://youtu.be/FwllgK-btXE)https://youtu.be/FwllgK-btXE)

@@ -19,7 +19,7 @@ The code above imports everything necessary for the code to work
     camera = videoSource('/dev/video0')
     display = jetson.utils.videoOutput("detecttest1.mp4")
 
-Tells what camera source to use and the file name to stroe the video in. You can also try doing it with your live camera but it didn't work for me.
+Tells what camera source to use and the file name to store the video in. You can also try doing it with your live camera but it didn't work for me.
 
     while True:
         img = camera.Capture()
@@ -35,7 +35,7 @@ This is how I added the time feature to the code.
 
     detections = net.Detect(img)
 
-This uses detectnet to detect the frames from the camera.
+This uses detectnet to detect the objects in frames from the camera.
 
      for detection in detections:
           confidence=detection.Confidence
